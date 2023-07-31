@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,800;1,300&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title> Home</title>
+</head>
+<body>
+  <!-- navbar -->
+
+
+
+ <!-- header -->
+ <header>
+    <div class="background" style="background-image:url('img/home-bg.jpg') ;">
+        <nav class="navbar">
+            <div class="container" id="navbar">
+                <div class="navbar-brand" >
+                    <a href="index.html" class="navbar-item">Start Bootstrap</a>
+                </div>
+                <div class="navbar-item-container">
+                    <ul class="navbar-items items">
+                    <li><a href="index.html" class="navbar-item">Home</a></li>
+                    <li><a href="about.html" class="navbar-item">About</a></li>
+                    <li><a href="samplePost.html" class="navbar-item">Sample Post</a></li>
+                    <li><a href="contact.html" class="navbar-item">Contact</a></li></ul>
+                </div>
+            </div>
+          </nav>
+        <div class="header-text">
+            <h1 style="color: white;">Clean Blog</h1>
+          <p style="color: white;"> A blog theme  by start bootstrap </p>
+        </div>
+    </div>
+ </header>
+
+
+  <!-- content -->
+  <main>
+    <div class="content-container">
+       
+      
+        <div class="content-preview">
+            <a href="samplePost.html">
+                <h2>Man must explore, and this is exploration at its greatest</h2>
+                <h3>Problems look mighty small from 150 miles up</h3>
+            </a>
+            <p class="muted">Posted by <a href="" class="post-link ">Start Bootstrap</a> on August 24, 2023</p>
+        </div> 
+        <hr>
+        <div class="content-preview">
+            <a href=" margin-bottom:0.5rem ;">
+                <h2>I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2>
+               
+            </a>
+            <p class="muted">Posted<a href="" class="post-link ">Start Bootstrap</a> on September 18, 2023</p>
+        </div>
+        <hr>
+        <div class="content-preview">
+            <a href=" margin-bottom:0.5rem ;">
+                <h2>Science has not yet mastered prophecy</h2>
+                <h3>We predict too much for the next year and yet far too little for the next ten.</h3>
+            </a>
+            <p class="muted">Posted <a href="" class="post-link ">Start Bootstrap</a> on August 24, 2023</p>
+        </div>
+        <hr>
+        <div class="content-preview">
+            <a href=" margin-bottom:0.5rem ;">
+                <h2 >Failure is not an option</h2>
+                <h3>Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3> 
+            </a>
+            <p  class="muted">Posted <a href="" class="post-link ">Start Bootstrap</a> on July 8, 2023</p>
+        </div>
+        <hr>
+     <div class="btn-container">
+    <div class="btn"> Older Post   <i class="fa-solid fa-arrow-right-long"></i> </a></div></div>
+    </div>
+  </main>
+  <!-- footer
+ -->
+
+ <footer>
+    <div class="footer-container">
+        <ul class="items">
+        <li class="icon list-inline"><a href=""><span><i class="fa-brands fa-twitter icon-item"></i></span></a></li>
+        <li class="icon list-inline"><a href=""><span><i class="fa-brands fa-facebook icon-item"></i></span></a></li>
+        <li class="icon list-inline"><a href=""><span><i class="fa-brands fa-github icon-item"></i></span></a></li>
+    </ul>
+        <div> Copyright © Your Website 2023</div>
+    </div>
+ 
+ </footer>
+</body>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+       
+      } else {
+        document.getElementById("navbar").style.top = "-50px";
+       
+       
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    </script>
+</html>
