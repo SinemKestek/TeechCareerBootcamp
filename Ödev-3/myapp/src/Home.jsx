@@ -13,20 +13,18 @@ const Home = () => {
 
     const getData = () => {
         if( selectedOption == "all" ){
-          axios.get('https://northwind.vercel.app/api/customers')
-        .then(res => {
-          setData(res.data)
-        } 
-        )  
+          axios
+          .get('https://northwind.vercel.app/api/customers')
+        .then((res) =>  setData(res.data));
+         
      }
       else{
         axios.get('https://northwind.vercel.app/api/customers')
-        .then(res => {   
-            setData(res.data.splice(0,selectedOption));
-        })
-      }
+        .then((res) =>{setData(res.data.splice(0,selectedOption));
 
-      // console.log(data)
+        })
+       }
+      
       };
       
       const toSorted=()=>{
@@ -58,8 +56,8 @@ const Home = () => {
         setTimeout(()=>{
           setLoading(false)
         },1000)
-      
-    
+       
+     
        
       }, [selectedOption]);
       
@@ -68,45 +66,49 @@ const Home = () => {
   return (
     <div className='container'>
         
-         {
-      loading ?  <Spinner /> :
+     
       <>
        <div className='menu'>
-        <Navbar/>
+        <Navbar SetSelectedOption={SetSelectedOption}/>
         <div >
-            <select id="data-length" name="data-length" onChange={onOptionChangeHandler}>
+            <select id="data-length" name="data-length" value={selectedOption} onChange={onOptionChangeHandler}>
               <option value="all">All</option>
               <option value="5">5</option>
               <option value="10">10</option>
              <option value="15">15</option>
          </select>
-         </div> </div>
+         </div>
+          </div>
           <div>
-          <table>
-      <thead>
-          <tr>
-              <th>Id</th>
-              <th>Company Name <span className='sort' onClick={()=>toSorted()}><BiSortAlt2 size={25}/></span>  </th>
-              <th>Street</th>
-              <th>City</th>
-         
-          </tr>
-       
-      </thead>
-      <tbody>
-          { 
-              data.map((dt,id) => {
-                  return <tr key={dt.id}>
-                      <td>{dt.id}</td>
-                      <td>{dt.companyName}</td>
-                       <td>{dt.address?.street}</td>
-                       <td>{dt.address?.city}</td>
-            
+           { loading ?  <Spinner></Spinner>:
+              <table>
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Company Name <span className='sort' onClick={()=>toSorted()}><BiSortAlt2 size={25}/></span>  </th>
+                      <th>Street</th>
+                      <th>City</th>
+                 
                   </tr>
-              })
-          }
-      </tbody>
-        </table>
+               
+              </thead>
+              <tbody>
+                  { 
+                      data.map((dt,id) => {
+                          return <tr key={dt.id}>
+                              <td>{dt.id}</td>
+                              <td>{dt.companyName}</td>
+                               <td>{dt.contactName}</td>
+                               <td>{dt.contactTitle}</td>
+                    
+                          </tr>
+                      })
+                  }
+              </tbody>
+                </table>
+           
+           }
+       
 
 
           </div>
@@ -117,7 +119,7 @@ const Home = () => {
 
 
 
-    }
+    
     </div>
   )
 }

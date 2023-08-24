@@ -3,7 +3,10 @@ import React from 'react'
 
 const Spinner = () => {
   return (
-    <div><FadeLoader color="#f5dd42"></FadeLoader></div>
+    <div className="spinner">
+      <FadeLoader color="#f5dd42"></FadeLoader>
+      
+  </div>
   )
 }
 

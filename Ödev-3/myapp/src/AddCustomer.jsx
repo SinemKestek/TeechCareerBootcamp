@@ -18,7 +18,7 @@ const AddCustomer = () => {
       contactTitle,
       contactName,
     }
-    // console.log(newCustomer)
+     console.log(newCustomer)
 
 if(companyName.length==0 || contactName.length==0 ||contactTitle.lenght==0){
   toast.error("Please enter valid value")
@@ -28,7 +28,7 @@ if(companyName.length==0 || contactName.length==0 ||contactTitle.lenght==0){
    .then(res => {
     console.log("Response",res.data)  
    })
-    navigate("/") 
+    .finally(()=>navigate("/") )
    }
 
   
