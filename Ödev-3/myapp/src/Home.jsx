@@ -21,27 +21,21 @@ const Home = () => {
       else{
         axios.get('https://northwind.vercel.app/api/customers')
         .then((res) =>{setData(res.data.splice(0,selectedOption));
-
         })
        }
-      
       };
       
+ const sortedData=[...data].sort((a,b)=>{
+  if(sorting){
+    return a.companyName.localeCompare(b.companyName);
+  }
+  else{
+    return b.companyName.localeCompare(a.companyName)
+  }
+ })
+
       const toSorted=()=>{
         setSorting(!sorting)
-        if(sorting===true){
-          let sorted=[...data].sort((a,b)=> a.companyName>b.companyName ? 1: -1)
-          // console.log(sorted)
-         setData(sorted) 
-        
-        }
-       if(sorting===false){
-        let sorted=[...data].sort((a,b)=> a.companyName>b.companyName ? -1: 1)
-        setData(sorted)
-       }
-       console.log(sorting)
-       
-       
       }
       const onOptionChangeHandler = (event) => {
         let selectValue= event.target.value
@@ -79,8 +73,8 @@ const Home = () => {
          </select>
          </div>
           </div>
-          <div>
-           { loading ?  <Spinner></Spinner>:
+          <div >
+           { loading ?  <Spinner/>:
               <table>
               <thead>
                   <tr>
@@ -94,7 +88,7 @@ const Home = () => {
               </thead>
               <tbody>
                   { 
-                      data.map((dt,id) => {
+                      sortedData.map((dt,id) => {
                           return <tr key={dt.id}>
                               <td>{dt.id}</td>
                               <td>{dt.companyName}</td>
@@ -106,19 +100,10 @@ const Home = () => {
                   }
               </tbody>
                 </table>
-           
            }
-       
-
-
           </div>
 
-           
-  
       </>
-
-
-
     
     </div>
   )

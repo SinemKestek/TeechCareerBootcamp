@@ -15,7 +15,6 @@ const Navbar = ({SetSelectedOption}) => {
          <button SetSelectedOption={SetSelectedOption} onClick={dataLoad} > <AiTwotoneHome  color='black' size={20}/> <Link to='/'>Home</Link> </button>
         <button ><MdGroupAdd  color='black' size={20}></MdGroupAdd> <Link to='/addCustomer'>Add Customer</Link> </button>
    </div>
-
     </div>
   )
 }
