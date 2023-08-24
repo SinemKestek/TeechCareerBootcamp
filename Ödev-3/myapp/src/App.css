@@ -1,0 +1,90 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px ;
+  background-color: rgb(12, 9, 17);
+  color:rgb(168, 168, 168)
+  
+}
+
+.container{
+  position: relative;
+ padding: 28px 40px;
+ color: rgb(192, 192, 192);
+}
+*{
+  text-decoration: none;
+  text-align:start;
+  
+}
+
+th{
+  color: rgba(221, 209, 38, 0.842);
+  font-size: 27px;
+ 
+ 
+}
+
+.menu{
+  border-radius: 40px;
+  background-color: rgba(165, 163, 161, 0.788);
+  display:  flex;
+  justify-content:space-between ;
+  align-items: center;
+  padding: 10px;
+}
+
+#data-length{
+  width: 120px;
+  height: 28px;
+  font-size: 14px;
+  color: rgb(49, 41, 7);
+  border-radius: 40px;
+}
+.sort{
+  cursor: pointer;
+
+}
+.sort:hover{
+  font-size: 28px;
+  color: rgb(184, 154, 23);
+}
+ 
+tr:nth-child(2n){
+  background-color: rgba(153, 148, 142, 0.089);
+}
+button{
+  border-radius: 20px;
+  border: none;
+  height: 28px;
+  text-align: center;
+  vertical-align: auto;
+  margin-right:9px ;
+  font-size: 14px;
+  background-color: rgb(221, 208, 27);
+  
+}
+.custom-container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+.custom-container >label{
+  margin-bottom: 12px;
+  font-size: 17px;
+ color: rgb(255, 255, 243);
+
+}
+
+.custom-container button{
+  width: 100%;
+  cursor: pointer;
+  
+}
+input{
+  border-radius: 20px;
+  height: 24px;
+}
